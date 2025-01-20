@@ -16,7 +16,9 @@ jobs:
         uses: ./.github/actions/setup-python
 
       - name: Install prerequisites
-        run: uv sync --all-extras --dev
+        run: |
+          pip install -r requirements.txt
+          uv sync --all-extras --dev
 
       - name: Run Python Script
         run: uv run src/main.py
