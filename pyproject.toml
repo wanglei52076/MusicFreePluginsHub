@@ -12,3 +12,8 @@ requires-python = ">=3.13"
 
 [tool.poetry.dependencies]
 ujson = "^5.0.0"
+
+[tool.poetry]
+packages = [
+    { include = "src" }
+]
