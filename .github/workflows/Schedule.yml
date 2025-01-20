@@ -23,7 +23,7 @@ jobs:
           poetry install
 
       - name: Run Python Script
-        run: poetry run uv run src/main.py
+        run: poetry run uvicorn src.main:app --host 0.0.0.0 --port 8000
 
       - name: Commit and Push
         run: |
