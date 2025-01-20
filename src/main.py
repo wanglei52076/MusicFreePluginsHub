@@ -1,9 +1,19 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+async def read_root():
+    return {"message": "Hello World"}
+
+# Existing code below
 import asyncio
 import ujson as json
 from pathlib import Path
 from loguru import logger
 from httpx import AsyncClient
 import hashlib
+
 # 定义路径
 data_dir = Path(__file__).parent / "data"
 data_dir.mkdir(exist_ok=True)
